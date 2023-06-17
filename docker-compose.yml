@@ -1,0 +1,10 @@
+version: "3"
+services:
+  risu:
+    container_name: risu-ai
+    build: ./docker
+    ports:
+      - "6001:6001"
+    volumes:
+      - ./save:/RisuAI/save
+    restart: unless-stopped
