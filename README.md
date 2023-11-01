@@ -10,6 +10,6 @@ Dockerize https://github.com/kwaroran/RisuAI
   ```
 - Upgrade
   ```
-  docker-compose build --no-cache
+  docker compose build --no-cache
   docker compose up -d
   ```
