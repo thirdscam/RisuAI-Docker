@@ -1,4 +1,4 @@
-FROM node:19.1.0-alpine3.16
+FROM node:alpine3.20
 
 ARG ROOT=/RisuAI
 
@@ -6,6 +6,6 @@ WORKDIR ${ROOT}
 
 RUN apk add git && \
     git clone https://github.com/kwaroran/RisuAI.git . && \
-    npm i && npm run build
+    npm i -g pnpm && pnpm install && pnpm run build
 
-ENTRYPOINT [ "/bin/sh", "-c", "npm run runserver" ]
+ENTRYPOINT [ "/bin/sh", "-c", "pnpm run runserver" ]
